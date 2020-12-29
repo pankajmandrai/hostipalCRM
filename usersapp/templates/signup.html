@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Singup</title>
+</head>
+
+<body>
+    <h1>This is Singup</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <h1>{{name}}</h1>
+        <label>email</label>
+        <input type="text" class="form-control" placeholder="email" name="email" value="" /><br />
+        <label>username</label>
+        <input type="text" class="form-control" placeholder="username" name="username" value="" /><br />
+        <label>password</label>
+        <input type="password" class="form-control" placeholder="Password *" name="password1" value="" /><br />
+        <label>retype password</label>
+        <input type="password" class="form-control" placeholder="re-type Password *" name="password2" value="" /><br /> {%if name == 'DOCTOR' %}
+
+        <label>department</label>
+        <input type="text" class="form-control" placeholder="department" name="department" value="" /> {% elif name == 'PATIENT'%}
+        <label>disease</label>
+        <input type="text" class="form-control" placeholder="disease" name="disease" value="" /> {% elif name == 'STAFF'%}
+        <label>shift</label>
+        <input type="text" class="form-control" placeholder="shift" name="shift" value="" /> {% elif name == 'STAFF'%} {% endif %}
+        <button type="submit">Sign up</button>
+    </form>
+</body>
+
+</html>
