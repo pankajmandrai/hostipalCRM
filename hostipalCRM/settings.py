@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'usersapp'
+    'usersapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,9 @@ TEMPLATES = [
     },
 ]
 
-AUTH_USER_MODEL = 'usersapp.Clients'
+# AUTH_USER_MODEL = 'usersapp.Clients'
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = '/dashboard/'
 WSGI_APPLICATION = 'hostipalCRM.wsgi.application'
 
 
