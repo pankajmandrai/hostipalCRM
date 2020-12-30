@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.contrib.auth import authenticate, login
 
+def index(request):
+    return render(request, "user/index.html")
+
 
 def login_request(request):
     username = request.POST['username']
