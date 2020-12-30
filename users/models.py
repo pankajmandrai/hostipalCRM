@@ -16,6 +16,8 @@ class RoleList(IntEnum):
 
 
 class User(AbstractUser):
+    USERNAME_FIELD = 'email'
+    email = models.EmailField('email address', unique=True)  # changes email to unique and blank to false
     role = models.PositiveSmallIntegerField(choices=RoleList.choices(), default=RoleList.Patient)
     address1 = models.CharField("Address 1", max_length=200, blank=True)
     address2 = models.CharField("Address 2", max_length=200, blank=True)
@@ -24,3 +26,4 @@ class User(AbstractUser):
     country = models.CharField("State", max_length=50, blank=True)
     updated_on = models.DateTimeField(auto_now=True, blank=True)
 
+    REQUIRED_FIELDS = []
